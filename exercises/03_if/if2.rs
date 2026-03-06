@@ -2,16 +2,25 @@
 fn picky_eater(food: &str) -> &str {
     if food == "strawberry" {
         "Yummy!"
-    } else {
-        1
+    } else if food == "potato"{
+        "I guess I can eat that."
+    } else if food == "broccoli" { 
+        "No thanks!"
+    } else if food == "gummy bears" { 
+        "No thanks!"
+    } else if food == "literally anything" { 
+        "No thanks!" 
+    } else { 
+        "No thanks!"
     }
 }
 
 fn main() {
-    // You can optionally experiment here.
+    let answer = picky_eater("potato");
+    print!("{}", answer)
 }
 
-// TODO: Read the tests to understand the desired behavior.
+// TODO: Read the tests to uanderstand the desired behavior.
 // Make all tests pass without changing them.
 #[cfg(test)]
 mod tests {
