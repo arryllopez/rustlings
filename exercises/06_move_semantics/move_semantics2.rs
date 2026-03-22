@@ -20,9 +20,22 @@ mod tests {
     fn move_semantics2() {
         let vec0 = vec![22, 44, 66];
 
-        let vec1 = fill_vec(vec0);
+        let vec1 = fill_vec(vec0.clone());
 
         assert_eq!(vec0, [22, 44, 66]);
         assert_eq!(vec1, [22, 44, 66, 88]);
     }
 }
+
+// &mut — no allocation, no copy. Just appends in place. O(1) amortized. This is what you'd prefer in production when you don't need two separate copies.
+// passing a mutable refernece instead of deep cloning heap memory
+// fn fill_vec(vec: &mut Vec<i32>) {
+//     vec.push(88);
+// }
+// mod tests { 
+//     use super::*;
+// fn move_semantics2() { 
+//    let mut vec0 = vec![22, 44, 66]; 
+//    fill_vec(&mut vec0);
+//    assert_eq!(vec0, [22, 44, 66, 88]);
+// }}
