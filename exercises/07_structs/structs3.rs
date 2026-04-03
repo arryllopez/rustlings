@@ -25,7 +25,7 @@ impl Package {
 
     // TODO: Add the correct return type to the function signature.
     fn is_international(&self) -> bool {
-        if self.sender_country == "Spain" || self.sender_country == "Russia" { 
+        if self.sender_country != self.recipient_country{ 
             return true;
         } else { 
             return false;
