@@ -1,6 +1,8 @@
 // TODO: Fix the compiler error without changing the function signature.
 fn current_favorite_color() -> String {
-    "blue"
+    let color = "blue"; 
+    let favorite_color = color.to_string();
+    return favorite_color;
 }
 
 fn main() {
